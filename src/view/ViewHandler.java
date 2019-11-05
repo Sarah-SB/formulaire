@@ -19,25 +19,21 @@ public class ViewHandler extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        root = new Group();
-        scene = new Scene(root, 800, 800);
-
         this.primaryStage = primaryStage;
 
-        primaryStage.setTitle("Login");
+        Group root = new Group();
+        Scene scene = new Scene(root, 800, 800);
 
+        viewSignUp = new Inscription(root);
+
+        primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    public void setViewSignUp(ControllerSignUp csu) {viewSignUp}
-    public void setViewSignIn(ControllerSignIn csi) {viewSignIn}
+    public Inscription getViewSignUp() {return viewSignUp;}
 
-    public Inscription getViewSignUp(){return viewSignUp;}
+    public Connexion getViewSignIn() {return viewSignIn;}
 
-    public Connexion getViewSignIn(){return viewSignIn;}
-
-    public Stage getPrimaryStage(){
-        return primaryStage;
-    }
+    public Stage getPrimaryStage() {return primaryStage;}
 }

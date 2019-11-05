@@ -2,6 +2,8 @@ package view;
 
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 
@@ -9,27 +11,31 @@ public class Connexion {
 
     private Group root;
     private Text title;
-    //private TextField champTxt;
-    //private Label champ;
-    private Button btnLogIn, btnValider;
+    private TextField champTxt;
+    private Label champ;
+    private Button btnLogUp, btnValider;
 
     Connexion(Group root){
         this.root = root;
 
-        title = initText(150, "Sign In");
-        title.setLayoutY(300);
+        initTitre();
+        initBtn();
 
         root.getChildren().clear();
         root.getChildren().add(title);
+        root.getChildren().add(btnLogUp);
+        //root.getChildren().add(btnValider);
     }
-    public Text initText(int fontSize, String textContent){
-        Text text = new Text();
-        text.setText(textContent);
-        double width = 800;
-        text.setWrappingWidth(width);
-        double middle = (Screen.getPrimary().getBounds().getWidth()/2) - (width/2);
+    public Text initTitre(){
+        title = new Text(10, 100,"Sign In");
+        title.setLayoutY(50);
+        return title;
+    }
 
-        return text;
+    public Button initBtn(){
+        btnLogUp = new Button("Sign Up");
+        btnLogUp.setLayoutY(80);
+        return btnLogUp;
     }
 
     public Group getRoot(){return root;}
