@@ -1,5 +1,7 @@
 package view;
 
+import controller.ControllerSignIn;
+import controller.ControllerSignUp;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -10,6 +12,8 @@ public class ViewHandler extends Application {
     private Stage primaryStage;
     private Inscription viewSignUp;
     private Connexion viewSignIn;
+    private ControllerSignIn csi;
+    private ControllerSignUp csu;
     private Group root;
     private Scene scene;
 
