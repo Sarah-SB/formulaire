@@ -1,5 +1,6 @@
 package view;
 
+import controller.ControllerSignUp;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,8 +12,8 @@ public class Inscription {
 
     private Text title;
     private Group root;
-    //private TextField champTxt;
-    //private Label champ;
+    private TextField champTxt;
+    private Label champ;
     private Button btnLogUp, btnValider;
 Inscription(Group root){
     this.root = root;
@@ -29,8 +30,18 @@ Inscription(Group root){
         double width = 800;
         text.setWrappingWidth(width);
         double middle = (Screen.getPrimary().getBounds().getWidth()/2) - (width/2);
+        text.getStyleClass().add("txt");
 
         return text;
+    }
+
+    public Button initBtn(int fontSize, String textContent){
+        Button btn = new Button(textContent);
+        double width = 250;
+        btn.setMinWidth(width);
+        double middle = (Screen.getPrimary().getBounds().getWidth()/2) - (width/2);
+
+        return btn;
     }
 
     public Group getRoot(){return root;}

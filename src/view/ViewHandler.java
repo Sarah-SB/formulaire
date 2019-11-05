@@ -12,8 +12,8 @@ public class ViewHandler extends Application {
     private Stage primaryStage;
     private Inscription viewSignUp;
     private Connexion viewSignIn;
-    private ControllerSignIn csi;
     private ControllerSignUp csu;
+    private ControllerSignIn csi;
     private Group root;
     private Scene scene;
 
@@ -29,6 +29,9 @@ public class ViewHandler extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    public void setViewSignUp(ControllerSignUp csu) {viewSignUp}
+    public void setViewSignIn(ControllerSignIn csi) {viewSignIn}
 
     public Inscription getViewSignUp(){return viewSignUp;}
 

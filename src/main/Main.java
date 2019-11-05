@@ -2,7 +2,6 @@ package main;
 
 
 import javafx.application.Application;
-import javafx.scene.Group;
 import view.ViewHandler;
 
 public class Main {
